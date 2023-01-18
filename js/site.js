@@ -20,7 +20,7 @@ function checkForPalindrome(userString) {
 }
 
 // view function
-function displayResults(checkPalin, inputString) {
+function displayResults(checkPalin) {
 
     document.getElementById('results').textContent = checkPalin;
     document.getElementById('alert').classList.remove('invisible');

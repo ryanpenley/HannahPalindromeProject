@@ -78,26 +78,46 @@
                 <div class="col-12 col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-js">
-function displayMessage() {
-        let msg = document.getElementById('message').value;
-    
-        Swal.fire(
-            {
-                backdrop: false,
-                title: 'Hannah',
-                text: msg
-            }
-        )
-        
+// controller
+function getValues() {
+    let inputString = document.getElementById('userString').value;
+
+    let checkPalin = checkForPalindrome(inputString);
+
+    displayResults(checkPalin, inputString);
+}
+
+// logic function
+function checkForPalindrome(userString) {
+
+    for(let i = 0; i < userString.length/2; i++) {
+        if(userString[i] != userString[userString.length - 1 - i]) {
+            return textContent = "Uh-oh! This is not a Palindrome!";
+        }
     }
+
+    return textContent = "Way to go! This is a Palindrome!";
+}
+
+// view function
+function displayResults(checkPalin) {
+
+    document.getElementById('results').textContent = checkPalin;
+    document.getElementById('alert').classList.remove('invisible');
+
+}
                         </code>
                     </pre>
                 </div>
                 <!-- Code Description -->
                 <div class="col-12 col-lg-4">
-                    <p>The code is structured in one function</p>
-                    <h5><code>displayMessage()</code></h5>
-                    <p>This function displays the message in a Sweet Alert.</p>
+                    <p>The code is structured in three functions:</p>
+                    <h5><code>function getValues()</code></h5>
+                    <p>This is the controller function.  It gets the value from the user's input and renames it as the variable "inputString". After that it gives that as a parameter to:</p>
+                    <h5><code>function checkForPalindrome(userString)</code></h5>
+                    <p>This is the logic function.  It uses a for loop to split the userString in half and check if the first letter in the index matches the last letter of the index.  If it does it will progress through the index with the i++.  If any letter in the progression doesn't match it will return the textContent "Uh-oh! but if it makes it through the length of the userString it will return "Way to Go!" It takes all this back to the getValues function which sends it to: </p>
+                    <h5><code>function displayResults(checkPalin)</code></h5>
+                    <p>This is the view function.  It receives the checkPalin parameter from the getValues function and displays the results in the html with the document.getElementById which corresponds to the two id's in the HTML doc.  </p>
                 </div>
             </div>
         </main>
