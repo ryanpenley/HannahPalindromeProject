@@ -2,25 +2,27 @@
 function getValues() {
     let inputString = document.getElementById('userString').value;
 
-    let reversedString = checkForPalindrome(inputString);
+    let checkPalin = checkForPalindrome(inputString);
 
-    displayResults(reversedString);
+    displayResults(checkPalin, inputString);
 }
 
 // logic function
-// reverse a string
 function checkForPalindrome(userString) {
-    let revString = '';
 
-    for(let i = 0;  - 1; i >= 0; i = i - 1) {
-        revString += userString[i];
-    } if
+    for(let i = 0; i < userString.length/2; i++) {
+        if(userString[i] != userString[userString.length - 1 - i]) {
+            return textContent = "Uh-oh! This is not a Palindrome!";
+        }
+    }
 
-    return revString;
+    return textContent = "Way to go! This is a Palindrome!";
 }
 
 // view function
-function displayResults(revString) {
-    document.getElementById('results').textContent = revString;
+function displayResults(checkPalin, inputString) {
+
+    document.getElementById('results').textContent = checkPalin;
     document.getElementById('alert').classList.remove('invisible');
+
 }
