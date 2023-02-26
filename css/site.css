@@ -79,3 +79,15 @@ footer {
     font-size: 4rem;
     padding-left: .5rem;
 }
+
+#btnSubmit {
+    background-color: #7843e6;
+    -webkit-text-fill-color: white;
+}
+
+#btnSubmit:hover {
+    background-color: #00ffff;
+    transition-duration: 0.4s;
+    -webkit-text-fill-color: black;
+    text-decoration-color: #212121;
+}
